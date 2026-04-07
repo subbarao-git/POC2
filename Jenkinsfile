@@ -7,9 +7,9 @@ pipeline {
 
     stages {
 
-        stage('Checkout Code') {
+        stage('Checkout') {
             steps {
-                git url: 'https://github.com/subbarao-git/POC2.git', branch: 'main'
+                checkout scm
             }
         }
 
