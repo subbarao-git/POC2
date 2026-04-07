@@ -9,7 +9,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/subbarao-git/POC2.git'
+                git url: 'https://github.com/subbarao-git/POC2.git', branch: 'main'
             }
         }
 
