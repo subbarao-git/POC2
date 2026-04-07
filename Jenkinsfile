@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "your-dockerhub-username/java-demo"
+        IMAGE_NAME = "subbu2712/java-demo"
     }
 
     tools {
@@ -32,8 +32,8 @@ pipeline {
 
         stage('Push Image') {
             steps {
-                withCredentials([string(credentialsId: 'dockerhub-password', variable: 'PASS')]) {
-                    sh 'echo $PASS | docker login -u your-dockerhub-username --password-stdin'
+                withCredentials([string(credentialsId: 'Kalpana@2810', variable: 'PASS')]) {
+                    sh 'echo $PASS | docker login -u subbu2712 --password-stdin'
                     sh 'docker push $IMAGE_NAME'
                 }
             }
