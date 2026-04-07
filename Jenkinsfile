@@ -21,7 +21,9 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t $IMAGE_NAME .'
+                timeout(time: 10, unit: 'MINUTES') {
+                    sh 'docker build -t $IMAGE_NAME .'
+                }
             }
         }
 
