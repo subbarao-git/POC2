@@ -27,8 +27,12 @@ pipeline {
 
         stage('Push Image') {
             steps {
-                withCredentials([string(credentialsId: 'dockerhub-password', variable: 'PASS')]) {
-                    sh 'echo $PASS | docker login -u subbu2712 --password-stdin'
+                withCredentials([usernamePassword(
+                    credentialsId: 'dockerhub-creds',
+                    usernameVariable: 'USER',
+                    passwordVariable: 'PASS'
+                    )]) {
+                    sh 'echo $PASS | docker login -u $USER --password-stdin'
                     sh 'docker push $IMAGE_NAME'
                 }
             }
