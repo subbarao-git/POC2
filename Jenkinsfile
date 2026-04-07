@@ -44,7 +44,7 @@ pipeline {
             steps {
                 sh 'docker stop java-app || true'
                 sh 'docker rm java-app || true'
-                sh 'docker run -d -p 8080:8080 --name java-app $IMAGE_NAME'
+                sh 'docker run -d -p 3000:3000 --name java-app $IMAGE_NAME'
             }
         }
     }
