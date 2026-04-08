@@ -42,8 +42,6 @@ pipeline {
 
         stage('Deploy Container') {
             steps {
-                sh 'docker stop java-app || true'
-                sh 'docker rm java-app || true'
                 sh 'docker run -d -p 8081:8080 --name java-app $IMAGE_NAME'
             }
         }
