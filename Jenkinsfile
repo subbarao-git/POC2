@@ -42,7 +42,7 @@ pipeline {
 
         stage('Deploy Container') {
             steps {
-                sh 'docker run -d -p 8081:8080 --name java-app $IMAGE_NAME'
+                sh 'docker run -d -p 8081:8080 --name java-app1 $IMAGE_NAME'
             }
         }
     }
