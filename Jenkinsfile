@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "subbu2712/java-demo"
+        IMAGE_NAME = "subbu2712/java-demo1"
     }
 
     stages {
@@ -35,7 +35,7 @@ pipeline {
                     passwordVariable: 'PASS'
                     )]) {
                     sh 'echo $PASS | docker login -u $USER --password-stdin'
-                    sh 'docker push $IMAGE_NAME'
+                    sh 'docker push $IMAGE_NAME:latest'
                 }
             }
         }
