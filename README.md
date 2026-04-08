@@ -189,7 +189,6 @@ pipeline {
                         docker stop app || true
                         docker rm app || true
                         docker run -d --name app -p 8081:8080 $IMAGE_NAME:latest
-                    '
                     """
             }
         }
